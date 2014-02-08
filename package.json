@@ -1,6 +1,6 @@
 {
   "name": "less",
-  "version": "1.6.2",
+  "version": "1.6.2-mr",
   "description": "Leaner CSS",
   "homepage": "http://lesscss.org",
   "author": {
@@ -59,7 +59,7 @@
     "http-server": "~0.5.5",
     "matchdep": "~0.1.2",
     "time-grunt": "~0.1.1"
- },
+  },
   "keywords": [
     "compile less",
     "css nesting",
