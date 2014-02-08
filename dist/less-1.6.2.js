@@ -5821,7 +5821,7 @@ tree.Variable.prototype = {
     };
 
     tree.evalEnv.prototype.isPathRelative = function (path) {
-        return !/^(?:[a-z-]+:|\/)/.test(path);
+        return !/^(?:[a-z-]+:|\/)/.test(path) || /^\/[^\/]/.test(path);
     };
 
     tree.evalEnv.prototype.normalizePath = function( path ) {
@@ -7410,12 +7410,10 @@ function loadFile(originalHref, currentFileInfo, callback, env, modifyVars) {
         originalHref = currentFileInfo.currentDirectory + originalHref;
     }
 
-    // MR PATCH
     // URLs starting with '/' should be relative to the LESS file host, not window.location.
     if (currentFileInfo && currentFileInfo.currentDirectory && /^\/[^\/]/.test(originalHref)) {
         originalHref = '//' + currentFileInfo.currentDirectory.split('/')[2] + originalHref;
     }
-    // END MR PATCH
 
     // sheet may be set to the stylesheet for the initial load or a collection of properties including
     // some env variables for imports
