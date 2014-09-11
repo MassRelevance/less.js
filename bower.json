@@ -13,8 +13,6 @@
     "LICENSE",
     "Gruntfile.js",
     "package.json",
-    "bower.json",
-    "./dist/*",
-    "./dist/!(less-1.6.2*.js)"
+    "dist/!(less-1.6.2*.js)"
   ]
 }
